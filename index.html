@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ruba Study Mode 📚</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Cairo',sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+background:
+linear-gradient(rgba(15,15,20,.82),rgba(10,10,15,.9)),
+url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1974&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+}
+
+.container{
+position:relative;
+width:90%;
+max-width:430px;
+padding:35px 28px;
+border-radius:30px;
+
+background:rgba(255,255,255,.07);
+backdrop-filter:blur(14px);
+
+border:1px solid rgba(255,255,255,.12);
+
+box-shadow:
+0 0 40px rgba(0,0,0,.6),
+0 0 25px rgba(255,255,255,.05);
+
+text-align:center;
+
+animation:show 1.2s ease;
+}
+
+@keyframes show{
+from{
+opacity:0;
+transform:translateY(25px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.top{
+font-size:52px;
+margin-bottom:10px;
+}
+
+.title{
+font-size:34px;
+font-weight:bold;
+margin-bottom:5px;
+color:#ffd8f1;
+}
+
+.sub{
+font-size:14px;
+opacity:.75;
+margin-bottom:25px;
+}
+
+.note{
+padding:24px;
+border-radius:24px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+line-height:2.1;
+font-size:18px;
+}
+
+.highlight{
+color:#ffb6dc;
+font-weight:bold;
+}
+
+.btn{
+margin-top:24px;
+padding:14px 30px;
+
+border:none;
+border-radius:50px;
+
+cursor:pointer;
+
+font-size:15px;
+font-weight:bold;
+
+background:linear-gradient(45deg,#ff5ea8,#ff9ac7);
+
+color:white;
+
+transition:.3s;
+
+box-shadow:0 0 20px rgba(255,105,180,.2);
+}
+
+.btn:hover{
+transform:scale(1.06);
+}
+
+.secret{
+display:none;
+
+margin-top:22px;
+
+padding:20px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.08);
+
+line-height:2;
+
+animation:fade .8s ease;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:scale(.9);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+.footer{
+margin-top:22px;
+font-size:12px;
+opacity:.5;
+letter-spacing:2px;
+}
+
+.float{
+position:absolute;
+font-size:20px;
+opacity:.18;
+animation:up 10s linear infinite;
+}
+
+@keyframes up{
+0%{
+transform:translateY(110vh) rotate(0deg);
+}
+100%{
+transform:translateY(-120vh) rotate(360deg);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="top">📚💖</div>
+
+<div class="title">
+Ruba
+</div>
+
+<div class="sub">
+Study Mode Activated ✨
+</div>
+
+<div class="note">
+
+إذا تعبتي من الدراسة شوي...  
+تذكري إنك  
+<span class="highlight">أشطر وأقوى</span>  
+مما بتتخيلي 💗
+
+وكل تعب اليوم  
+رح يصير فخر بكرا 🌸
+
+بس أهم قانون بالدراسة؟ 📖  
+ممنوع Ruba تشك بحالها أبدًا ✨
+</div>
+
+<button class="btn" onclick="showMsg()">
+رسالة تحفيزية 💌
+</button>
+
+<div class="secret" id="secret">
+
+بعرف قديش عم تتعبي...  
+بس صدقيني،  
+كل هالمجهود رح يوصلك لمكان كتير كبير 🤍
+ومحمد شايف اديش انتِ مميزة وقوية وانا بشوف حلي فيكي كتيررر 💖
+</div>
+
+<div class="footer">
+GOOD LUCK RUBA ✨
+</div>
+
+</div>
+
+<audio autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+function showMsg(){
+document.getElementById("secret").style.display="block";
+}
+
+for(let i=0;i<18;i++){
+
+let item=document.createElement("div");
+
+item.className="float";
+
+let arr=["💖","📚","✨","🌸"];
+
+item.innerHTML=arr[Math.floor(Math.random()*arr.length)];
+
+item.style.left=Math.random()*100+"%";
+
+item.style.fontSize=(Math.random()*20+15)+"px";
+
+item.style.animationDuration=(Math.random()*6+6)+"s";
+
+document.body.appendChild(item);
+
+}
+
+</script>
+
+</body>
+</html>
